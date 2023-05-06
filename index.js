@@ -22,7 +22,7 @@ app.use(
 );
 app.use(bodyParser.urlencoded({extended:true}))
 app.use("/post", postRouter); 
-app.use("/auth",authRouter)
+app.use("/",authRouter)
 
 const PORT = process.env.PORT || 4001;
 
