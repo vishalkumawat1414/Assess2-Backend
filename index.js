@@ -7,22 +7,20 @@ var cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
 
-
-
 dotenv.config("./.env");
 // middlewares
-app.use(express.json()); 
+app.use(express.json());
 
 //connecting backend and fontend
 app.use(
 	cors({
 		credentials: true,
-		origin: "http://localhost:3000",
+		origin: "https://fabulous-platypus-308bae.netlify.app",
 	})
 );
-app.use(bodyParser.urlencoded({extended:true}))
-app.use("/post", postRouter); 
-app.use("/",authRouter)
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/post", postRouter);
+app.use("/", authRouter);
 
 const PORT = process.env.PORT || 4001;
 
